@@ -27,12 +27,27 @@ from incendio import settings
 @login_required()
 def home(request):
     context = {}
-    return render(request,'base.html',context)
+    context['title'] = u'Inicio'
+    return render(request,'panel.html',context)\
+
+@login_required()
+def viewcamera(request):
+    context = {}
+    context['title'] = u'Camaras'
+    return render(request,'adm_camera/viewcamera.html',context)
+
+@login_required()
+def viewusers(request):
+    context = {}
+    context['title'] = u'Usuarios'
+    return render(request,'adm_users/viewusers.html',context)
 
 
 urlpatterns = [
     re_path(r'admin/', admin.site.urls),
     re_path(r'^$', home, name='home'),
+    re_path(r'usuarios', viewusers, name='users'),
+    re_path(r'camaras', viewcamera, name='camera'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [

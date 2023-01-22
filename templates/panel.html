@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-4" url="usuarios">
+            <div class="card h-100 align-items-center mb-3">
+                <div class="row align-items-center g-0">
+                    <div class="col-md-4">
+                        <img src="/static/img/panel_users.png" class="img-fluid rounded  p-1 w-100" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body pt-1">
+                            <a  class="card-title stretched-link" href="/usuarios">Usuarios</a>
+                            <p class="card-text">
+                                Gestión de usuarios
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" url="usuarios">
+            <div class="card align-items-center h-100 mb-3">
+                <div class="row align-items-center g-0">
+                    <div class="col-md-4">
+                        <img src="/static/img/panel_camarea.png " class="img-fluid rounded  p-1 w-100" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body pt-1">
+                            <a class="card-title stretched-link" href="/camaras">Camaras</a>
+                            <p class="card-text">
+                                Gestión de camaras
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

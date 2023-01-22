@@ -1,0 +1,10 @@
+/.idea
+/.idea/**
+/api_google_key.json
+/db.sqlite3
+/venv/
+/venv/**
+/.vscode
+/.vscode/**
+/__pycache__/
+/__pycache__/**

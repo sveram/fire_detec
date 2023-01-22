@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="/static/bootstrap5/css/bootstrap.css" rel="stylesheet"/>
+    <link href="/static/bootstrap5/css/bootstrap-grid.css" rel="stylesheet"/>
+    <link href="/static/bootstrap5/css/bootstrap-reboot.css" rel="stylesheet"/>
+    <link href="/static/bootstrap5/css/bootstrap-grid.rtl.css" rel="stylesheet"/>
+    <link href="/static/bootstrap5/css/bootstrap-reboot.rtl.css" rel="stylesheet"/>
+    <link href="/static/bootstrap5/css/bootstrap-utilities.css" rel="stylesheet"/>
+    <style>
+        body{
+            background: #ffe259;
+            background: linear-gradient(to right,#ffa751,#ffe259);
+        }
+        .bg{
+            background-image: url("/static/img/fondo.jpg");
+            background-position: center center;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="container w-75 bg-white mt-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg d-none d-sm-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"></div>
+        <div class="col bg-white p-2 rounded-end">
+            <div class="text-end">
+                <img src="/static/img/security-camera.png" width="48" alt="">
+                <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+
+                <!--LOGIN-->
+                <form method="post" class="text-start" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <label for="id_username" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" name="username" id="id_username">
+                    </div>
+                    <div class="mb-4">
+                        <label for="id_password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" name="password" id="id_password">
+                    </div>
+                    <div class="mb-4 form-check">
+                        <input type="checkbox" name="connected" class="form-check-input">
+                        <label for="connected" class="form-check-label">Recordar usuario</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </div>
+                    <div class="my-3">
+                        <!--<span>No tienes cuenta? <a href="#">Registrate</a></span>-->
+                        <span><a href="#">Recuperar contraseña.</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/bootstrap5/js/bootstrap.bundle.js"></script>
+<script src="/static/bootstrap5/js/bootstrap.js"></script>
+</body>
+</html>
